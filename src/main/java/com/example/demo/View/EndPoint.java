@@ -1,31 +1,12 @@
-package com.example.demo;
+package com.example.demo.View;
+import com.example.demo.Model.Usuario;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.service.annotation.DeleteExchange;
 
 @RestController
-public class Hello {
+public class EndPoint {
 
     private Usuario usuario = new Usuario(); // Inicializa um objeto vazio
 
-    @GetMapping("/hello")
-    public String getHello() {
-        return "Hello World";
-    }
-
-    @PutMapping("/hello")
-    public String putHello() {
-        return "Substituir";
-    }
-
-    @PostMapping("/hello")
-    public String postHello() {
-        return "Criando algo novo";
-    }
-
-    @DeleteMapping("/hello")
-    public String deleteHello() {
-        return "Deletando";
-    }
 
     @PostMapping("/usuario")
     public String criarUsuario(@RequestBody Usuario novoUsuario) {
